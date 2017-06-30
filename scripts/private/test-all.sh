@@ -2,9 +2,6 @@
 
 set -ex
 
-# Ensure that all the dependencies are there
-npm install
-
 # Ensure that the chromeDriver is installed
 npm run update-webdriver
 
