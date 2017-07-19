@@ -1,3 +1,6 @@
 test:
   override:
     - ./scripts/private/test-all.sh
+  post:
+    - mkdir -p $CIRCLE_ARTIFACTS/ci-test
+    - mv coverage $CIRCLE_ARTIFACTS/ci-test/coverage

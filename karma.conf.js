@@ -13,8 +13,14 @@ module.exports = function(config) {
       '**/*.module.js',
       '*!(.module|.spec).js',
       '!(bower_components)/**/*!(.module|.spec).js',
-      '**/*.spec.js'
+      '!(bower_components)/**/*!(.spec).js'
     ],
+
+    reporters: ['progress', 'coverage'],
+
+    preprocessors: {
+      '**/*.js': 'coverage'
+    },
 
     autoWatch: true,
 
@@ -25,8 +31,14 @@ module.exports = function(config) {
     plugins: [
       'karma-chrome-launcher',
       'karma-firefox-launcher',
-      'karma-jasmine'
-    ]
+      'karma-jasmine',
+      'karma-coverage'
+    ],
 
+    coverageReporter: {
+      type : 'lcov',
+      dir : '../coverage/',
+      subdir: '.'
+    }
   });
 };
