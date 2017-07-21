@@ -34,7 +34,7 @@ describe('Phone', function() {
   it('should fetch the phones data from `/phones/phones.json`', function() {
     var phones = Phone.query();
 
-    expect(phones).toEqual([]);
+    expect(phones).toEqual(['foo']);
 
     $httpBackend.flush();
     expect(phones).toEqual(phonesData);
